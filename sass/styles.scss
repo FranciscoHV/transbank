@@ -1,0 +1,1211 @@
+@import "../sass/_bootstrap";
+@import "compass/css3";
+@import "compass/utilities";
+//FUENTES
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900);
+
+//BREAKPOINTS GRALES
+$xs: "(max-width: 767px)";
+$sm: "(max-width: 991px)";
+$md: "(max-width: 1199px)";
+$lg: "(min-width: 1200px)";
+// BREAKPOINTS UNICOS
+$xs_absoluto: "(min-width: 0px) and (max-width: 767px)";
+$sm_absoluto: "(min-width: 768px) and (max-width: 991px)";
+$md_absoluto: "(min-width: 992px) and (max-width: 1199px)";
+$lg_absoluto: "(min-width: 1200px)";
+
+//COLORES
+$transbank: #d6012f; 
+$blanco: #ffffff;
+$gris_oscuro: #cecece;
+$gris_intermedio: #f6f6f6;
+$gris_claro: #eeeeee;
+$negro: #1b1b1b;
+
+//MIXINGS
+@mixin cero {
+	padding: 0;
+	margin: 0;
+}
+@mixin animar {
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+ }
+
+//AUX
+html {
+	font: {
+		size: 20px; //BASE REM
+	}
+	@media #{$sm} {
+		font-size: 14px;
+	}
+	@include cero;
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+	@include cero;
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+.no_margen > [class*='col-'] { //EVITA MARGENES BOOTSTRAP EN EL PRIMER NIVEL DE LA GRILLA
+    padding-right: 0;
+    padding-left: 0;
+}
+
+button, input, textarea { //LIMPIAR PROPIEDADES PREDETERMINADAS
+	box-shadow: none;
+	outline: none;
+	@include cero;
+}
+
+ul, li{ //LIMPIAR PROPIEDADES PREDETERMINADAS
+	text-indent: none;
+	list-style-type: none;
+	@include cero;
+}
+
+a, a:hover, a:active, a:visited { //LIMPIAR PROPIEDADES PREDETERMINADAS
+	text: {
+		decoration: inherit;
+		decoration: none;
+	}
+	color: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6, span {
+	@include cero;
+	-webkit-text-shadow: none;
+	-moz-text-shadow: none;
+	text-shadow: none;
+}
+
+//TEXTOS
+h1 {
+	font: {
+		size: 2.4rem;
+		weight: 400;
+		}
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	margin-top: 2.75rem;
+	@media #{$sm}{
+		font: {
+			size: 1.75rem;
+		}
+	}
+}
+
+h2 {
+	font: {
+		size: 2.4rem;
+		weight: 700;
+	}
+	color: $transbank;
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	@media #{$sm}{
+		font: {
+			size: 1.75rem;
+		}
+	}
+}
+
+h3 {
+	font: {
+		size: 2.4rem; 
+		weight: 700;
+	}
+	text: {
+		align: left;
+		transform: capitalize;
+		decoration: underline;
+	}
+	color: $blanco;
+	cursor: pointer;
+	@media #{$sm}{
+    	text: {
+    		align: center;
+    	}
+    }
+}
+
+p {
+	font: {
+		size: 0.9rem;
+		weight: 300;
+	}
+	text: {
+		align: justify;
+	}
+}
+
+.link{
+	font-weight: 600;
+	text-decoration: underline;
+	cursor: pointer;
+	@include animar;
+}
+
+//ELEMENTOS
+.boton_tb {
+	background-color: $blanco;
+	border-radius: 0.75rem;
+	color: $transbank;
+	padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+	font: {
+		size: 1.2rem;
+		weight: 600;
+	}
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	letter-spacing: 2px;
+	border: solid 1px $gris_claro;
+	margin: 0.5rem;
+	&:hover{
+		border: solid 1px $transbank;
+		background-color: $transbank;
+		color: $blanco;
+	}
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	@include animar;
+}
+
+//SECCIONES
+
+////////////////////////////////////// NAVBAR
+
+.navbar {
+	background-color: $transbank;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	border-radius: 0;
+	z-index: 100;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	max-height: 4.9rem;
+	.logo_bg{
+		height: 3.2rem;
+		margin: 0.75rem 0rem 0.75rem 1rem;
+		@media #{$xs}{
+			height: 2.5rem;
+			margin-top: 1.25rem;
+		}
+		@media screen and (max-width: 350px){
+			display: none;
+		}
+	}
+	.logo_mini {
+		display: none;
+		height: 2rem;
+		position: relative;
+		margin: 1.5rem 0rem 0rem 0.25rem;
+		float: left;
+		@media screen and (max-width: 350px){
+			display: block;
+		}
+	}
+	ul {
+		position: relative;
+		float: right;
+		display: inline-block;
+		top: 2rem;
+		@media #{$xs}{
+			height: 0px;
+			overflow: hidden;
+			display: block;
+			background-color: $transbank;
+			width: 100%;
+			float: none;
+			@include cero;
+			webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			top: 0;
+			@include animar;
+		}
+	}
+	li {
+		display: inline-block;
+		margin-right: 1rem;
+		color: $blanco;
+		padding: 1rem 0rem 1rem 0rem;
+		cursor: pointer;
+		font: {
+			size: 1.2rem;
+			weight: 300;
+		}
+		text: {
+			align: right;
+			transform: capitalize;
+		}
+		@media #{$xs}{
+			display: block;
+			text-align: center;
+			margin: 0;
+			color: $transbank;
+			border-top: 1px dashed $transbank;
+			background-color: $blanco;
+			cursor: pointer;
+			@include animar;
+			&:hover {
+				background-color: $transbank;
+				color: $blanco;
+			}
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+	}
+	.btn_ingresar{
+		background-color: $blanco;
+		color: $transbank;
+		font: {
+			size: 1.2rem;
+			weight: 600;
+		}
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+		position: relative;
+		float: right;
+		padding: 1rem 1.5rem 0.5rem 1.5rem;
+		border: none;
+		margin-top: 1.5rem;
+		margin-right: 1rem;
+		border-radius: 0.75rem 0.75rem 0rem 0rem;
+		@include animar;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+	}
+	.form_login{
+		display: none;
+		position: fixed;
+		top: 4.77rem;
+		right: 21px;
+		height: 180px;
+		width: 8.4rem;
+		background-color: $blanco;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		text-align: center;
+		@media #{$sm_absoluto}{
+			right: 1.1rem;
+			height: 130px;
+			width: 8.3rem;
+			top: 4.7rem;
+		}
+		@media #{$xs_absoluto}{
+			width: 80%;
+			right: 10%;
+			height: 250px;
+			top: 6rem;
+		}
+		input {
+			width: 80%;
+			position: relative;
+			margin: 0 auto;
+			padding: 2px;
+			font-size: 0.75rem;
+			margin-top: 0.5rem;
+			text-align: center;
+			@media #{$xs_absoluto}{
+				font-size: 1.4rem;
+				margin-top: 1.5rem;
+			}
+		}
+		button {
+			padding: 0rem 0.5rem 0.1rem 0.6rem;
+			border-radius: 0.25rem;
+			@media #{$xs_absoluto}{
+				margin-top: 1rem;
+				padding: 0.2rem 1rem 0.4rem 1.2rem;
+			}
+		}
+		i {
+			font-size: 0.8rem;
+		}
+		.in{
+			font: {
+				size: 0.6rem;
+				weight: 200;
+			}
+			@media #{$xs_absoluto}{
+				font: {
+					size: 1.2rem;
+				}
+			}
+			display: block;
+			color: $negro;
+			text: {
+				align: center;
+				decoration: underline;
+			}
+			&:hover{
+				color: $transbank;
+				font-weight: 300;
+			}
+			@include animar;
+		}
+	}
+	.navbar_btn{
+		padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+		float: left;
+		margin-top: 1rem;
+	}
+}
+
+/* ESTADO LOGIN*/
+	.estado_login{
+		display: none;
+		max-width: 350px;
+		@media #{$sm}{
+			max-width: 225px;
+		}
+		@media #{$xs}{
+				background-color: $gris_claro;
+				width: 100%;
+				float: inherit;
+				position: absolute;
+				max-width: 100%;
+				border-radius: 0;
+				top: 3.1rem;
+		}
+		background-color: $blanco;
+		color: $transbank;
+		font: {
+			size: 1.2rem;
+			weight: 600;
+		}
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+		position: relative;
+		float: right;
+		padding: 0.5rem;
+		border: none;
+		margin-top: 1.5rem;
+		margin-right: 1rem;
+		border-radius: 0.75rem 0.75rem 0rem 0rem;
+		@include animar;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+		.barra {
+			width: 100%;
+			height: 10px;
+			margin-bottom: 0.5rem;
+			border-radius: 5px;
+			background-color: $gris_oscuro;
+			overflow: hidden;
+			-webkit-box-shadow: inset 2px 3px 5px 1px rgba(0,0,0,0.25);
+			-moz-box-shadow: inset 2px 3px 5px 1px rgba(0,0,0,0.25);
+			box-shadow: inset 2px 3px 5px 1px rgba(0,0,0,0.25);
+			.porcentaje {
+				height: 10px;
+				width: 60%;
+				position: relative;
+				background-color: $transbank;
+			}
+		}
+		> figure {
+			width: 40px;
+			height: 40px;
+			background-color: $transbank;
+			float: left;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			@media #{$xs_absoluto}{
+				width: 33px;
+				height: 33px;
+			}
+		}
+		span {
+			font-size: 0.6rem;
+			display: block;
+			width: 100%;
+			float: left;
+			margin-bottom: 0.5rem;
+		}
+		p {
+			font: {
+				size: 0.75rem;
+				weight: 300;
+			}
+			float: left;
+			line-height: 0.75rem;
+			span {
+				font: {
+					weight: 600;
+					size: 1rem;
+				}
+				text-decoration: underline;
+			}
+			margin: 0rem 0.25rem 0rem 0.25rem;
+		}
+		button {
+			padding: 0rem 0.5rem 0.2rem 0.6rem;
+			margin: 0rem 0.25rem 0.25rem 0.25rem;
+			border-radius: 0.25rem;
+			float: right;
+			font-size: 1rem;
+			@media #{$xs_absoluto}{
+				margin-left: 0.5rem;
+				padding: 0.2rem 0.6rem 0.4rem 0.7rem;
+			}
+		}
+		i {
+			font-size: 0.8rem;
+		}
+		.configuracion{
+			display: none;
+			width: 95%;
+			margin-left: 2.5%;
+			z-index: 9;
+			hr {
+				color: $gris_claro;
+				background-color: $gris_claro;
+				height: 1px;
+				width: 100%;
+				line-height: 0;
+				@include cero;
+			}
+			span {
+				font: {
+					size: 0.8rem;
+					weight: 300;
+				}
+				color: $negro;
+				@include cero;
+				margin-top: 1rem;
+			}
+			.largo {
+				box-shadow: none;
+				outline: none;
+				@include cero;
+				width: 100%;
+				margin-top: 0.25rem;
+				margin-left: 0rem;
+				margin-right: 0rem;
+				margin-bottom: 0.25rem;
+				padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+				@media #{$xs_absoluto}{
+					font-size: 1rem;
+					line-height: 1.1rem;
+					margin-top: 1rem;
+					padding: 0.5rem 1rem 0.5rem 1rem;
+				}
+			}
+			.options {
+				position: relative;
+				margin: 0 auto;
+				float: inherit;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+		}
+		input, select {
+			width: 80%;
+			position: relative;
+			margin: 0 auto;
+			padding: 2px;
+			font-size: 0.75rem;
+			font-family: 'Titillium', sans-serif;
+			margin-top: 0.5rem;
+			text-align: center;
+			@media #{$xs_absoluto}{
+				font-size: 1.4rem;
+				margin-top: 0.5rem;
+			}
+		}
+	}
+
+
+/*CORTNIA*/
+	.cortina{
+		width: 100%;
+		height: 100vh;
+		background-color: $negro;
+		opacity: 0.8;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9;
+		display: none;
+	}
+
+////////////////////////////////////// BANNER
+
+.carousel{
+	margin-top: 70px;
+	@media #{$sm}{
+		margin-top: 50px; 
+	}
+	height: 20rem;
+	span {
+		font: {
+			size: 2.4rem;
+			weight: 400;
+		}
+		line-height: 2rem;
+		color: $negro;
+	}
+	p {
+		text-align: center;
+		color: $negro;
+	}
+	.aviso{
+		font: {
+			style: italic;
+			size: 0.6rem;
+		}
+		display: block;
+	}
+	ol {
+		bottom: 0rem;
+		li {
+			background: url(../img/indicador_off.svg) no-repeat;
+			background-size: 100% 100%;
+			background-color: $blanco;
+			width:20px;
+			height:20px;
+			cursor: pointer;
+			text-align:center;
+			@include cero;
+			margin-right: 5px;
+			margin-top: 4px;
+		}
+		.active {
+			background: url(../img/indicador_on.svg) no-repeat;
+			background-size: 100% 100%;
+			background-color: $blanco;
+			width:20px;
+			height:20px;
+			cursor: pointer;
+			text-align:center;
+			padding: 0;
+			margin: 0;
+			margin-right: 5px;
+		}
+	}
+	.cap {
+		top: 0;
+	}
+}
+
+.item{
+	min-height: 400px;
+	overflow: hidden;
+	background: {
+		image: url(../img/oblicuas.png);
+		size: cover;
+		position: center;
+	}
+}
+#item_1{
+	min-height: 400px;
+	span, h1, h2, h3, p {
+		text-align: left;
+	}
+	span {
+		display: block;
+	}
+	button {
+		position: relative;
+		left: 0rem;
+		margin: inherit;
+		margin-top: 0.5rem;
+		margin-bottom: 0rem;
+		display: inherit;
+	}
+	.cap {
+		width: 50%;
+		left: 1rem;
+	}
+	.aviso{
+		margin-top: 0;
+	}
+	@media #{$sm}{
+		span, h1, h2, h3, p {
+			text-align: center;
+		}
+		.cap {
+			width: 90%;
+			left: 5%;
+		}
+		button {
+			margin: 0 auto;
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+#item_3{
+	min-height: 400px;
+	span, h1, h2, h3, p {
+		text-align: right;
+	}
+	span {
+		display: block;
+	}
+	button {
+		position: relative;
+		right: 0rem;
+		float: right;
+		margin: inherit;
+		margin-top: 0.5rem;
+		margin-bottom: 0rem;
+		display: inherit;
+	}
+	.cap {
+		width: 50%;
+		margin-left: 27%;
+	}
+	.aviso{
+		margin-top: 0;
+		float: right;
+	}
+	@media #{$sm}{
+		span, h1, h2, h3, p {
+			text-align: center;
+		}
+		.cap {
+			width: 90%;
+			left: 5%;
+			margin-left: inherit;
+		}
+		button {
+			margin: 0 auto;
+			margin-top: 0.5rem;
+			right: 0;
+			float: inherit;
+		}
+	}
+}
+
+.fig_izq{
+	position: absolute;
+	left: 1rem;
+	top: 32px;
+	height: 324px;
+	width: 158px;
+	@media #{$sm}{
+		opacity: 0.15;
+	}
+	animation-name: pelotas_a;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    @keyframes pelotas_a {
+	    0% {
+	        transform: scale(1.5,1.5) rotate (0deg);
+	    	}
+	    50% {
+	        transform: scale(2,2) rotate(20deg);
+	        
+	    	}
+	    100% {
+	        transform: scale(1.5,1.5) rotate (0deg);
+	    	}
+	}
+}
+.fig_der{
+	position: absolute;
+	right: 1rem;
+	top: 32px;
+	height: 324px;
+	width: 158px;
+	@media #{$sm}{
+		opacity: 0.15;
+	}
+	animation-name: pelotas_b;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    @keyframes pelotas_b {
+	    0% {
+	        transform: scale(1.5,1.5) rotate (0deg);
+	    	}
+	    50% {
+	        transform: scale(2,2) rotate(-20deg);
+	        
+	    	}
+	    100% {
+	        transform: scale(1.5,1.5) rotate (0deg);
+	    	}
+	}
+}
+
+.fig_left{
+	position: absolute;
+	left: 0rem;
+	top: 32px;
+	height: 358px;
+	@media #{$sm}{
+		opacity: 0.15;
+	}
+	animation-name: implementador;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    @keyframes implementador {
+	    0% {
+	        opacity: 0;
+	        margin-top: 150px;
+	    	}
+	   	10% {
+	        opacity: 100;
+	       	margin-top: 0px;
+	    	}
+	   	90% {
+	        opacity: 100;
+	        margin-top: 0px;
+	    	}
+	    100% {
+	        opacity: 0;
+	        margin-top: 150px;
+	    	}
+	}
+	@media #{$sm}{
+		    @keyframes implementador {
+	    0% {
+	        opacity: 0;
+	        margin-top: 150px;
+	    	}
+	   	10% {
+	        opacity: 0.15;
+	       	margin-top: 0px;
+	    	}
+	   	90% {
+	        opacity: 0.15;
+	        margin-top: 0px;
+	    	}
+	    100% {
+	        opacity: 0;
+	        margin-top: 150px;
+	    	}
+		}
+	}
+}
+.fig_right{
+	position: absolute;
+	cursor: pointer;
+	right: 0rem;
+	top: 32px;
+	height: 350px;
+	width: auto;
+	@media #{$sm}{
+		opacity: 0.15;
+	}
+	animation-name: intro;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    @keyframes intro {
+	    0% {
+	        opacity: 0;
+	        margin-right: -150px;
+	    	}
+	   	10% {
+	        opacity: 100;
+	       	margin-right: 0px;
+	    	}
+	   	90% {
+	        opacity: 100;
+	        margin-right: 0px;
+	    	}
+	    100% {
+	        opacity: 0;
+	        margin-right: -150px;
+	    	}
+	}
+	@media #{$sm}{
+		    @keyframes intro {
+	    0% {
+	        opacity: 0;
+	        margin-right: -150px;
+	    	}
+	   	10% {
+	        opacity: 0.15;
+	       	margin-right: 0px;
+	    	}
+	   	90% {
+	        opacity: 0.15;
+	        margin-right: 0px;
+	    	}
+	    100% {
+	        opacity: 0;
+	        margin-right: -150px;
+	    	}
+		}
+	}
+}
+
+.modal {
+	border-radius: none;
+}
+.modal-body{
+	margin-top: 0;
+	padding: 0;
+	background-color: $transbank;
+}
+
+
+////////////////////////////////////// HERRAMIENTAS
+.herramientas{
+	h1{
+		color: $blanco;
+	}
+	p {
+		color: $blanco;
+		text-align: justify;
+		@media #{$sm}{
+			text-align: center;
+    	}
+	}
+	background-color: $transbank;
+	article {
+		margin-top: 2rem;
+		padding: 1rem 1rem 1rem 1rem;
+		@extend .col-xs-12;
+		@extend .col-sm-12;
+		@extend .col-md-6;
+		@extend .col-lg-4;
+		&:nth-of-type(2) {
+			border-left: 1px dashed $blanco;
+			border-right: 1px dashed $blanco;
+			@media #{$md}{
+				border-right: none;
+			}
+			@media #{$sm}{
+				border-left: none;
+			}
+		}
+		&:last-of-type{
+			@extend .col-md-offset-3;
+			@extend .col-lg-offset-0;
+			cursor: pointer;
+			&:hover{
+				h3, p, img {
+					opacity: 0.50;
+					@include animar;
+				}
+				span {
+					display: block;
+					@include animar;
+				}
+			}
+			@include animar;
+		}
+		figure {
+			@extend .col-xs-12;
+			@extend .col-sm-12;
+			@extend .col-md-3;
+			@extend .col-lg-3;
+			text-align: center;
+			img {
+				width: 56px;
+			}
+		}
+		div {
+			@extend .col-xs-12;
+			@extend .col-sm-12;
+			@extend .col-md-9;
+			@extend .col-lg-9;
+		}
+		span {
+			position: absolute;
+			top: 25%;
+			left: 0%;
+			height: 50%;
+			width: 100%;
+			background: url(../img/oblicuas.png);
+			background-color: $blanco;
+			-ms-transform: rotate(3deg); /* IE 9 */
+    		-webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+    		transform: rotate(3deg);
+    		color: $transbank;
+    		font: {
+    			weight: 700;
+    			size: 1.2rem;
+    		}
+    		text: {
+    			align: center;
+    			transform: uppercase;
+    		}
+    		letter-spacing: 2px;
+    		padding-top: 0.25rem;
+		 	@include animar;
+			-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			display: none;
+		}
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d33454+29,d6012f+100 */
+background: rgb(211,52,84); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(211,52,84,1) 29%, rgba(214,1,47,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(211,52,84,1) 29%,rgba(214,1,47,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(211,52,84,1) 29%,rgba(214,1,47,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d33454', endColorstr='#d6012f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	}
+	padding-bottom: 2rem;
+}
+
+.wrapper_flex_wpimp{
+	width: 100%;
+	padding: 1.5rem 1rem 1.5rem 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-end;
+	background-image: url(../img/oblicuas.png);
+	border-bottom: 1rem solid $blanco;
+	article{
+		width: 50%;
+		padding: 0rem 0.25rem 0rem 0.25rem;
+		@media #{$sm}{
+			width: 100%;
+		}
+		text-align: center;
+		p {
+			text-align: center;
+		}
+		img {
+			height: 169px;
+			@media #{$sm}{
+				max-width: 250px;
+				height: auto;
+			}
+		}
+		&:last-of-type {
+			@media #{$sm}{
+				margin-top: 2rem;
+				border-left: none;
+				border-top: 1px dashed $gris_claro;
+				padding-top: 2rem;
+			}
+			border-left: 1px dashed $gris_claro;
+		}
+	}
+
+}
+
+.wrapper_flex_descubre{
+	width: 100%;
+	padding: 1.5rem 1rem 1.5rem 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	background-color: #f6f6f6;
+	article{
+		width: 30%;
+		margin: 1.6%;
+		padding: 2rem;
+		background-image: url(../img/oblicuas.png);
+		background-color: $blanco;
+		@media #{$sm}{
+			width: 100%;
+		}
+		p {
+			text-align: justify;
+			margin-top: 0.75rem;
+		}
+		&:last-of-type {
+			@media #{$sm}{
+				margin-top: 1.5rem;
+			}
+		}
+		span {
+			background-color: $transbank;
+			color: $blanco;
+			font: {
+				size: 1.5rem;
+				weight: 600;
+			}
+			padding: 0.2rem 0.5rem 0.2rem 2.5rem;
+		}
+		figure {
+			background-color: $blanco;
+			width: 64px;
+			height: 64px;
+			@media #{$sm} {
+				width: 44px;
+				height: 44px;
+			}
+			border-radius: 64px;
+			position: absolute;
+			top: 1.5rem;
+			left: 1rem;
+			-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			-moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.25);
+			> div {
+				display: table;
+				width: 100%;
+				height: 100%;
+			}
+			> div > div {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+			}
+			img {
+				width: 36px;
+				@media #{$sm} {
+					width: 24px;
+				}
+			}
+		}
+	}
+}
+.huincha {
+	width: 100%;
+	background-color: $gris_oscuro;
+	text-align: center;
+	padding: 0.5rem 0rem 0.5rem 0rem;
+	color: $blanco;
+	font: {
+		size: 1.2rem; 
+		weight: 300;
+	}
+	i {
+		margin-left: 0.5rem;
+		font-size: 1rem
+	}
+}
+
+.tri {
+	cursor: pointer;
+	@include animar;
+	width: 0; 
+	height: 0; 
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 30px solid $blanco;
+	font: {
+		size: 0.5rem;
+		weight: 300;
+	}
+	letter-spacing: 2px;
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	position: fixed;
+	bottom: 0px;
+	right: 20px;
+	color: $transbank;
+	z-index: 10;
+	i {
+		margin-left: -9px;
+		margin-top: 5px;
+		@include animar;
+		font-size: 1rem;
+		@media #{$sm} {
+			margin-left: -7px;
+		}
+	}
+	&:hover {
+		i {
+			margin-left: -12px;
+			margin-top: 4px;
+			font-size: 1.3rem;
+			@media #{$sm} {
+				margin-left: -9px;
+			}
+		}
+	}
+}
+
+/////////////////////////////FOOTER
+
+.footer{
+	background-color: $transbank;
+	color: $blanco;
+	min-height: 100px;
+	padding-bottom: 15px;
+	font: {
+		size: 0.9rem;
+		weight: 400;
+	}
+	@media #{$xs} {
+		text-align: center;
+	}
+	p {
+		text-align: right;
+		float: right;
+		margin-top: 35px;
+		line-height: 1rem;
+		a {
+			font-size: 0.8rem;
+			font-weight: 300;
+		}
+		@media #{$xs} {
+			float: none;
+			position: relative;
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+	}
+	.tb_logo{
+		float: left;
+		height: 50px;
+		margin-top: 25px;
+		margin-left: 2rem;
+		@media #{$xs} {
+			margin-left: 0rem;
+			float: none;
+			margin-top: 20px;
+		}
+	}
+	.cg_logo{
+		float: right;
+		margin-right: 2rem;
+		margin-top: 40px;
+		height: 20px;
+		margin-left: 0.5rem;
+		@media #{$xs} {
+			margin-right: none;
+			margin-left: none; 
+			float: none;
+			display: block;
+			position: relative;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,156 @@
+<!--POPUP VIDEO-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="video">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+            		<div class="embed-responsive embed-responsive-4by3">
+					    <video controls class="embed-responsive-item">
+					        <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+					    </video>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CORTINA-->
+    <div class="cortina hidden-sm hidden-lg hidden-md"></div>
+	<!--BANNER-->
+	<div class="center-block" data-uk-scrollspy="{cls:'uk-animation-scale-up'}">
+		<div id="carousel-banner" class="carousel slide carousel-fade" data-ride="carousel">
+		 	<!--CIRCULOS-->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-banner" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-banner" data-slide-to="1"></li>
+				<li data-target="#carousel-banner" data-slide-to="2"></li>
+			</ol>
+			<hr>
+			<!--IMÁGENES-->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active" id="item_1"><!--PRIMER SLIDE-->
+					<a data-toggle="modal" data-target="#video"><img src="img/video.png" class="fig_right"></a>
+					<div class="carousel-caption cap">
+						<span>Te invitamos a descubrir</span> <h2>Transbank Developers</h2>
+						<p class="hidden-xs">La nueva plataforma de aprendizaje pensada especialmenta para desarrolladores y creada estratégicamente para potenciar el desarrollo del e-commerce nacional.</p>
+						<a data-toggle="modal" data-target="#video"><button class="boton_tb visible-sm visible-xs">ver video</button></a>
+						<button class="boton_tb">regístrate</button>
+						<span class="aviso">¡Es gratis!</span>
+					</div>
+				</div>
+				<div class="item" id="item_2"><!--SEGUNDO SLIDE-->
+					<img src="img/figura_1.png" class="fig_izq">
+					<img src="img/figura_2.png" class="fig_der">
+					<div class="carousel-caption cap">
+						<span>Conoce las nuevas</span> <h2>herramientas de implementación</h2>
+						<p>PLUGINS, SDK y nuestra API.</p>
+						<button class="boton_tb">explorar</button>
+						<span class="aviso">Última actualización 16.03</span>
+					</div>
+				</div>
+				<div class="item" id="item_3"><!--TERCER SLIDE-->
+					<img src="img/implementador_2.png" class="fig_left">
+					<div class="carousel-caption cap">
+						<span>Contacta a un</span> <h2>implementador de Webpay Plus</h2>
+						<p>Si tienes una idea que necesita sistema de pago y no eres un desarrollador,  te facilitamos el encuentro con decenas de expertos que ya han implementado webpay.</p>
+						<button class="boton_tb">busca el tuyo</button>
+					</div>
+				</div>
+			 </div>
+
+		</div>
+	</div>
+	<!--HERRAMIENTAS-->
+	<section class="herramientas center-block" data-uk-scrollspy="{cls:'uk-animation-scale-down'}">
+		<div class="container-fluid">
+			<div class="row no_margen">
+				<h1>Herramientas de implementación</h1>
+				<article><!--PLUGINS-->
+					<figure>
+						<img src="img/icon_1.svg"><!--ICONO-->
+					</figure>
+					<div>
+						<h3>Plugins</h3><!--TEXTOS-->
+						<p>Encuentra aquí los Plugins de WooCommerce, PrestaShop, Magento, VirtueMart y OpenCart.</p>
+					</div>
+				</article>
+				<article><!--SDK-->
+					<figure>
+						<img src="img/icon_2.svg"><!--ICONO-->
+					</figure>
+					<div>
+						<h3>SDK</h3><!--TEXTOS-->
+						<p>Disponible aquí para los siguientes lenguajes: Java, .NET y PHP.</p>
+					</div>
+				</article>
+				<article id="imple"><!--API-->
+					<figure>
+						<img src="img/icon_3.svg"><!--ICONO-->
+					</figure>
+					<div>
+						<h3>Api Docs</h3><!--TEXTOS-->
+						<p>Simple y rápido de implementar en tu sitio de e-commerce.</p>
+						<span>Próximamente</span>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+	<!--WEBPAY E IMPLEMENTADOR-->
+	<section class="wrapper_flex_wpimp">
+		<article data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+			<img src="img/logo_webpay.png">
+			<h1>Manuales</h1>
+			<p>Descarga aquí los manuales de integración de Webpay Plus</p>
+			<button class="boton_tb">descargar</button>
+		</article>
+		<article data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
+			<img src="img/implementador.png">
+			<h1>Implementadores</h1>
+			<p>Te presentamos un ranking de desarrolladores que pueden implementar tu e-commerce.</p>
+			<button class="boton_tb">buscar</button>
+		</article>
+	</section>
+	<!--DESCUBRE-->
+	<section class="wrapper_flex_descubre">
+		<article data-uk-scrollspy="{cls:'uk-animation-scale-down'}"><!--E LEARNING-->
+			<figure><!--ICONO-->
+				<div>
+					<div><img src="img/icon_4.svg"></div>
+				</div>
+			</figure>
+			<span>Manuales</span><!--TITULO-->
+			<p><!--TEXTO-->
+				Transbank developers ofrece un completo curso e-learning que permite comprender a fondo los diferentes productos, prodcesos y caracterísitcas técnicas de Transbank, así el desarrollador podrá asesorar al comercio en la implementación del producto Transbank que se ajuste a la necesidad del comercio.
+			</p>
+		</article>
+		<article data-uk-scrollspy="{cls:'uk-animation-scale-down'}" id="manuales"><!--IMPLEMENTADOR-->
+			<figure><!--ICONO-->
+				<div>
+					<div><img src="img/icon_5.svg"></div>
+				</div>
+			</figure>
+			<span>Implementador</span><!--TITULO-->
+			<p><!--TEXTO-->
+				Al registrarse en Transbank developers el desarrollador podrá crear un perfil de implementador, el cual le permitirá publicar las integraciones que haya realizado de forma de exitosa con Transbank.
+			</p>
+		</article>
+		<article data-uk-scrollspy="{cls:'uk-animation-scale-down'}"><!--DEVELOPER-->
+			<figure><!--ICONO-->
+				<div>
+					<div><img src="img/icon_6.svg"></div>
+				</div>
+			</figure>
+			<span>Developers</span><!--TITULO-->
+			<p><!--TEXTO-->
+				Transbank developers es la ventana a la nuevas herramientas y tecnologías creadas por Transbank para el crecimiento y el fortalecimiento del e-commerce nacional.
+			</p>
+		</article>
+	</section>
+	<!--LLAMADA A LA ACCIÓN -->
+	<div class="huincha">
+		Empieza tomando el curso y sé un <span class="link">implementador Transbank</span><i class="fa fa-caret-right"></i>
+		<a href="#top">
+			<figure class="tri">
+				<i class="fa fa-arrow-up"></i>
+			</figure>
+		</a>
+	</div>

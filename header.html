@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Transbank Developers</title><!--BUSCADORES-->
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Gricel Sepulveda y Cumbregroup">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!--AUX RESPONSIVO-->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/uikit.css"><!--UIKIT-->
+	<link rel="stylesheet" href="css/bootstrap.min.css"><!--ESTILOS BOOTSTRAP-->
+	<link rel="stylesheet" href="css/styles.css"><!--ESTILOS DEL SITIO-->
+	<script src="js/jquery.min.js"></script><!--JQUERY JS-->
+	<script src="js/uikit.min.js"></script><!--UIKIT JS-->
+	<script src="js/bootstrap.min.js"></script><!--BOOTSTRAP JS-->
+	<link rel="stylesheet" href="css/font-awesome.min.css"><!--FONT AWESOME-->
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/><!--FAVICON-->
+	<script src="js/sscr.js"></script>
+	<script src="js/scripts.js" type="text/javascript"></script>
+</head>
+<body id="top">
+	<!--NAVBAR-->
+	<nav class="navbar">
+		<img class="logo_bg" src="img/logo_transbank.png">
+		<!--ESTADO LOGOUT-->
+		<button class="btn_ingresar">ingresar</button>
+		<!--FIN ESTADO LOGOUT-->
+		<!--FORMULARIO INGRESO-->
+		<div class="form_login">
+			<form>
+				<input type="text" placeholder="nombre"><!--USUARIO-->
+				<input type="password" placeholder="contraseña"><!--CONTRASEÑA-->
+				<br/>
+				<button type="button" class="boton_tb log"><!--BOTON-->
+					<i class="fa fa-chevron-right"></i>
+				</button>
+				<br/>
+				<span class="in"><a href="">Registro</a></span>
+				<span class="in"><a href="">Olvidé mi contraseña</a></span>
+			</form>
+		</div>
+		<!--FIN FORMULARIO INGRESO-->
+		<!--ESTADO LOGIN-->
+		<div class="estado_login">
+			<!--ELEMENTOS FIJOS-->
+			<figure>
+				<img src="img/avatar.png"><!--FOTO PERFIL-->
+			</figure>
+			<p class="hidden-sm">Bienvenido<br>
+			<span>Gricel Sepúlveda Rozas</span><!--NOMBRE-->
+			</p>
+			<button class="boton_tb cog"><!--BOTON CONFIG-->
+					<i class="fa fa-cog"></i>
+			</button>
+			<button class="boton_tb logout"><!--BOTON LOGOUT-->
+					<i class="fa fa-sign-out"></i>
+			</button>
+			<span class="hidden-xs">Progreso en el curso:</span>
+			<figure class="barra hidden-xs"><!--AVANCE EN EL CURSO-->
+				<div class="porcentaje"><!--INDICADOR BARRA-->
+				</div>
+			</figure>
+			<!--ELEMENTOS DE CONFIGURACION-->
+			<form class="configuracion">
+				<button class="boton_tb largo"><!--PERFIL PUBLICO-->
+					ver perfil público
+				</button>
+				<button class="boton_tb largo"><!--CAMBIAR FOTO-->
+					cambiar foto
+				</button>
+				<!--FACEBOOK-->
+				<!--TWITTER-->
+				<span>Modificar datos</span>
+				<input type="text" placeholder="Gricel Dayhanna"><!--NOMBRES-->
+				<input type="text" placeholder="Sepúlveda Rozas"><!--APELLIDOS-->
+				<input type="text" placeholder="17.315.726-6"><!--RUT-->
+				<input type="text" placeholder="Desarrollador"><!--CARGO.-->
+				<select><!--CIUDAD-->
+					<option>Hola</option>
+					<option>Mundo</option>
+				</select>
+				<select><!--COMUNA-->
+					<option>Hola</option>
+					<option>Mundo</option>
+				</select>
+				<br/>
+				<button class="boton_tb options guardar"><!--GUARDAR CAMBIOS-->
+					<i class="fa fa-check"></i>
+				</button>
+				<button class="boton_tb options cancelar"><!--DESCARTAR CAMBIOS-->
+					<i class="fa fa-times"></i>
+				</button>
+			</form>
+		</div>
+		<!--FIN ESTADO LOGIN-->
+		<button class="boton_tb navbar_btn visible-xs">
+			<i class="fa fa-bars"></i>
+		</button>
+		<img class="logo_mini" src="img/logo_transbank_mini.png">
+		<ul>
+			<a href="#manuales"><li>manuales</li></a>
+			<a href="#imple"><li>implementadores</li></a>
+			<li >F.A.Q.</li>
+		</ul>
+	</nav>
+<!--FIN NAVBAR-->
+</body>
+</html>
