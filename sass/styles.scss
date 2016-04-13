@@ -1204,6 +1204,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d33454', end
 	}
 }
 
+//////// EXTRAS
+
+.sl_boton{
+	width: 50%;
+	min-height: 25px;
+	float: left;
+	text-align: center;
+	padding: 0;
+	cursor: pointer;
+	@media #{$xs} {
+		width: 100%;
+		margin-bottom: 0.25rem;
+		margin-top: 0.25rem;
+	}
+	img {
+		position: relative;
+		height: 100%;
+		width: auto;
+		padding: 0;
+		margin: 0;
+	}
+}
+
 
 
 

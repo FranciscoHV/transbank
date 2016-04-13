@@ -9367,3 +9367,29 @@ p {
     margin: 0 auto;
   }
 }
+
+/* line 1209, ../sass/styles.scss */
+.sl_boton {
+  width: 50%;
+  min-height: 25px;
+  float: left;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  /* line 1209, ../sass/styles.scss */
+  .sl_boton {
+    width: 100%;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+  }
+}
+/* line 1221, ../sass/styles.scss */
+.sl_boton img {
+  position: relative;
+  height: 100%;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
